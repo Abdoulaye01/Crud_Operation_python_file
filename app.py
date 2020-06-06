@@ -1,13 +1,13 @@
 from Utils import database
 
+
 USER_INPUT = """
 Please input letter a - b - c - d and q to quit 
     a - add book to the list
     b - view all books
     c - mark book as read
     d - delete book
-    q - quit application
-"""
+    q - quit application """
 
 user_input = input(USER_INPUT)
 
