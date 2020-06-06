@@ -26,7 +26,9 @@ def mark_book_as_read(name):
     global books
     for book in books:
         if book['name'] == name:
-            books['read'] = True
+            book['read'] = True
+            print('Book marks as read! ')
+            break
     else:
         print('Not found > TRY AGAIN')
 

@@ -13,9 +13,11 @@ user_input = input(USER_INPUT)
 
 
 def prompt_add_book():
-    name = input('Enter book name: ')
-    author = input('Enter author name: ')
-    database.add_book(name, author)
+    how_many = int(input('how many books are you entering to: '))
+    for i in range(0, how_many):
+        name = input('Enter book name: ')
+        author = input('Enter author name: ')
+        database.add_book(name, author)
 
 
 def prompt_get_all_books():
@@ -24,7 +26,7 @@ def prompt_get_all_books():
         for book in books:
             read = 'YES' if book[
                 'read'] else 'NO'  # This is saying if book read is true then read == YES else read == False
-            print(f"{book['name']} by {book['author']}, read: {read}")
+            print(f"{book['name'].title()} by {book['author'].title()}, read: {read.capitalize()}")
     else:
         print('List is empty')
 
