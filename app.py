@@ -22,13 +22,10 @@ def prompt_add_book():
 
 def prompt_get_all_books():
     books = database.get_all_books()
-    if len(books) > 0:
-        for book in books:
-            read = 'YES' if book[
-                'read'] else 'NO'  # This is saying if book read is true then read == YES else read == False
-            print(f"{book['name'].title()} by {book['author'].title()}, read: {read.capitalize()}")
-    else:
-        print('List is empty')
+    for book in books:
+        read = 'YES' if book[
+                            'read'] == '1' else 'NO'  # This is saying if book read is true then read == YES else read == False
+        print(f"{book['name'].title()} by {book['author'].title()}, read: {read.capitalize()}")
 
 
 def prompt_mark_book_as_read():
@@ -44,6 +41,7 @@ def prompt_delete_book():
 
 
 while user_input != 'q':
+    database.check_if_file_exits()
 
     if user_input == 'a':
         prompt_add_book()
